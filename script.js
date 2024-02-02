@@ -16,6 +16,7 @@ let upcomingBigBlindDisplay = document.getElementById('upcomingBigBlind');
 let upcomingAnteDisplay = document.getElementById('upcomingAnte');
 let breakMessageDisplay = document.getElementById('breakMessage');
 let levelSwitchSound = new Audio('sounds/zapsplat_bells_buddhist_chime_ring_004_48484.mp3'); // Replace with the actual path to your sound file
+let breakOverSound = new Audio('sounds/zapsplat_bells_buddhist_chime_ring_004_48484.mp3');
 
 let timer;
 
@@ -83,6 +84,7 @@ function updateBreakTimer() {
         // Break time is over, start the next level
         clearInterval(timer);
         breakMessageDisplay.textContent = ''; // Clear break message
+        breakOverSound.play();
         startTimer();
     } else {
         if (seconds === 0) {
