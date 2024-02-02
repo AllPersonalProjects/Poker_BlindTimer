@@ -2,8 +2,8 @@ let currentLevel = 1;
 let smallBlinds = [100, 100, 200, 200, 300, 400, 500, 600, 800, 1000, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 10000, 10000, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000];
 let bigBlinds = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
 let antes = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
-let originalTime = 1200; // 20 minutes in seconds
-let breakTime = 0; // 5 minutes in seconds
+let originalTime = 2; // 20 minutes in seconds
+let breakTime = 2; // 5 minutes in seconds
 let remainingTime = originalTime;
 let timerDisplay = document.getElementById('timerDisplay');
 let currentLevelDisplay = document.getElementById('currentLevel');
@@ -15,6 +15,8 @@ let upcomingSmallBlindDisplay = document.getElementById('upcomingSmallBlind');
 let upcomingBigBlindDisplay = document.getElementById('upcomingBigBlind');
 let upcomingAnteDisplay = document.getElementById('upcomingAnte');
 let breakMessageDisplay = document.getElementById('breakMessage');
+let levelSwitchSound = new Audio('sounds/zapsplat_bells_buddhist_chime_ring_004_48484.mp3'); // Replace with the actual path to your sound file
+
 let timer;
 
 function startTimer() {
@@ -52,6 +54,9 @@ function updateTimer() {
 function updateLevels() {
     currentLevelDisplay.textContent = `Nåværnde nivå: ${currentLevel}`;
     upcomingLevelDisplay.textContent = `Neste nivå: ${currentLevel + 1}`;
+
+    // Play sound when level switches
+    levelSwitchSound.play();
 
     // Update current blinds
     currentSmallBlindDisplay.textContent = smallBlinds[currentLevel - 1];
