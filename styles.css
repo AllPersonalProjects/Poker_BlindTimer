@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 20px;
-    background-color: burlywood;
+    background-color: #cfc5b4;
 }
 
 #title {
@@ -52,5 +52,5 @@ body {
 #startButton,
 #stopButton {
     font-size: 16px; /* Adjust the font size as needed */
-    margin-top: 160px; /* Adjust the margin-top as needed */
+    margin-top: 100px; /* Adjust the margin-top as needed */
 }
