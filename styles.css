@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: monospace;
     text-align: center;
     margin: 20px;
     background-color: #cfc5b4;
@@ -27,6 +27,7 @@ body {
 
 #currentBlinds {
     font-size: 45px;
+    display: inline-flex; /* or display: inline-block; */
 }
 
 #currentBlinds span {
@@ -36,10 +37,12 @@ body {
 #upcomingLevel {
     font-size: 40px;
     margin-top: 100px;
+
 }
 
 #upcomingBlinds {
     font-size: 35px;
+    display: inline-flex; /* or display: inline-block; */
 }
 
 #upcomingBlinds span {

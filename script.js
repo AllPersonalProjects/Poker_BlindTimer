@@ -50,17 +50,17 @@ function updateTimer() {
 }
 
 function updateLevels() {
-    currentLevelDisplay.textContent = `Nåværende nivå: ${currentLevel}`;
-    upcomingLevelDisplay.textContent = `Neste nivå: ${currentLevel + 1}`;
+    currentLevelDisplay.textContent = `Level ${currentLevel}`;
+    upcomingLevelDisplay.textContent = `Neste level`;
 
     levelSwitchSound.play();
 
-    currentSmallBlindDisplay.textContent = smallBlinds[currentLevel - 1];
-    currentBigBlindDisplay.textContent = bigBlinds[currentLevel - 1];
+    currentSmallBlindDisplay.innerHTML = smallBlinds[currentLevel - 1] + "&nbsp;";
+    currentBigBlindDisplay.innerHTML = bigBlinds[currentLevel - 1] + "&nbsp;";
     currentAnteDisplay.textContent = antes[currentLevel - 1];
 
-    upcomingSmallBlindDisplay.textContent = smallBlinds[currentLevel];
-    upcomingBigBlindDisplay.textContent = bigBlinds[currentLevel];
+    upcomingSmallBlindDisplay.innerHTML = smallBlinds[currentLevel] + "&nbsp;";
+    upcomingBigBlindDisplay.innerHTML = bigBlinds[currentLevel] + "&nbsp;";
     upcomingAnteDisplay.textContent = antes[currentLevel];
 }
 
