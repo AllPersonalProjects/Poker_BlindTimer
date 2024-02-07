@@ -16,37 +16,37 @@ body {
 }
 
 #timerDisplay {
-    font-size: 120px;
-    margin-top: 25px;
+    font-size: 150px;
+    margin-top: 0px;
 }
 
 #currentLevel {
-    margin-top: 20px;
-    font-size: 45px;
+    margin-top: 100px;
+    font-size: 70px;
 }
 
 #currentBlinds {
-    font-size: 45px;
+    font-size: 70px;
     display: inline-flex; /* or display: inline-block; */
 }
 
 #currentBlinds span {
-    font-size: 45px;
+    font-size: 70px;
 }
 
 #upcomingLevel {
     font-size: 40px;
-    margin-top: 100px;
+    margin-top: 150px;
 
 }
 
 #upcomingBlinds {
-    font-size: 35px;
+    font-size: 40px;
     display: inline-flex; /* or display: inline-block; */
 }
 
 #upcomingBlinds span {
-    font-size: 35px;
+    font-size: 40px;
 }
 
 #startButton,

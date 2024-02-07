@@ -2,8 +2,8 @@ let currentLevel = 1;
 let smallBlinds = [100, 100, 200, 200, 300, 400, 500, 600, 800, 1000, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 10000, 10000, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000];
 let bigBlinds = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
 let antes = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
-let originalTime = 4; // 20 minutes in seconds
-let breakTime = 6; // 5 minutes in seconds
+let originalTime = 1801; // 20 minutes in seconds
+let breakTime = 0; // 5 minutes in seconds
 let remainingTime = originalTime;
 let timerDisplay = document.getElementById('timerDisplay');
 let currentLevelDisplay = document.getElementById('currentLevel');
@@ -25,17 +25,23 @@ function startTimer() {
     timer = setInterval(updateTimer, 1000);
 }
 
+let breakStarted = false;
+
 function updateTimer() {
     let minutes = Math.floor(remainingTime / 60);
     let seconds = remainingTime % 60;
 
     if (minutes === 0 && seconds === 0) {
-        currentLevel++;
-        updateLevels();
-        remainingTime = originalTime;
-
-        // Start the timer for the next level directly without checking for breaks
-        startTimer();
+        if (currentLevel % 4 === 0 && !breakStarted) {
+            startBreakTimer();
+            breakStarted = true;
+        } else {
+            currentLevel++;
+            updateLevels();
+            remainingTime = originalTime;
+            startTimer();
+            breakStarted = false;
+        }
     } else {
         if (seconds === 0) {
             minutes--;
@@ -48,6 +54,9 @@ function updateTimer() {
         remainingTime--;
     }
 }
+
+
+
 
 function updateLevels() {
     currentLevelDisplay.textContent = `Level ${currentLevel}`;
