@@ -2,7 +2,7 @@ let currentLevel = 1;
 let smallBlinds = [100, 100, 200, 200, 300, 400, 500, 600, 800, 1000, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 10000, 10000, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000];
 let bigBlinds = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
 let antes = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
-let originalTime = 1801; // 20 minutes in seconds
+let originalTime = 5; // 20 minutes in seconds
 let breakTime = 0; // 5 minutes in seconds
 let remainingTime = originalTime;
 let timerDisplay = document.getElementById('timerDisplay');
@@ -16,7 +16,7 @@ let upcomingBigBlindDisplay = document.getElementById('upcomingBigBlind');
 let upcomingAnteDisplay = document.getElementById('upcomingAnte');
 let breakMessageDisplay = document.getElementById('breakMessage');
 let levelSwitchSound = new Audio('sounds/zapsplat_sport_air_horn_soccer_blast_tune_21154.mp3'); // Replace with the actual path to your sound file
-let breakOverSound = new Audio('sounds/zapsplat_bells_buddhist_chime_ring_004_48484.mp3');
+let breakOverSound = new Audio('sounds/Of cource i lied.m4a');
 
 let timer;
 
@@ -55,9 +55,6 @@ function updateTimer() {
     }
 }
 
-
-
-
 function updateLevels() {
     currentLevelDisplay.textContent = `Level ${currentLevel}`;
     upcomingLevelDisplay.textContent = `Neste level`;
@@ -77,6 +74,7 @@ function startBreakTimer() {
     clearInterval(timer);
     remainingTime = breakTime;
     timer = setInterval(updateBreakTimer, 1000);
+    //breakOverSound.play(); // Add this line to play the breakOverSound
 }
 
 function updateBreakTimer() {
