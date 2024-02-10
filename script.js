@@ -1,9 +1,13 @@
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
 let currentLevel = 1;
 let smallBlinds = [100, 100, 200, 200, 300, 400, 500, 600, 800, 1000, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 10000, 10000, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000];
 let bigBlinds = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
 let antes = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
-let originalTime = 5; // 20 minutes in seconds
-let breakTime = 0; // 5 minutes in seconds
+let levelTimeImported = urlParams.has('levelTime') ? parseInt(urlParams.get('levelTime')) : 20; // Default level time is 20 minutes
+let breakTimeImported = urlParams.has('breakTime') ? parseInt(urlParams.get('breakTime')) : 0; // Default break time is 0 minutes
+let originalTime = levelTimeImported * 60; // 20 minutes in seconds
+let breakTime = breakTimeImported * 60; // 5 minutes in seconds
 let remainingTime = originalTime;
 let timerDisplay = document.getElementById('timerDisplay');
 let currentLevelDisplay = document.getElementById('currentLevel');
