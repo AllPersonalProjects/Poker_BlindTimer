@@ -25,7 +25,7 @@ let upcomingSmallBlindDisplay = document.getElementById('upcomingSmallBlind');
 let upcomingBigBlindDisplay = document.getElementById('upcomingBigBlind');
 let upcomingAnteDisplay = document.getElementById('upcomingAnte');
 let breakMessageDisplay = document.getElementById('breakMessage');
-let levelSwitchSound = new Audio('sounds/zapsplat_sport_air_horn_soccer_blast_tune_21154.mp3'); // Replace with the actual path to your sound file
+let levelSwitchSound = new Audio('../sounds/zapsplat_sport_air_horn_soccer_blast_tune_21154.mp3'); // Replace with the actual path to your sound file
 let breakOverSound = new Audio('sounds/Of cource i lied.m4a');
 
 let timer;
