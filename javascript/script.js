@@ -4,6 +4,12 @@ let currentLevel = 1;
 let smallBlinds = [100, 100, 200, 200, 300, 400, 500, 600, 800, 1000, 1000, 1500, 2000, 2500, 3000, 4000, 5000, 6000, 10000, 10000, 10000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000];
 let bigBlinds = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
 let antes = [200, 300, 400, 500, 600, 800, 1000, 1200, 1600, 2000, 2500, 3000, 4000, 5000, 6000, 8000, 10000, 12000, 15000, 20000, 25000, 30000, 40000, 50000, 60000, 80000, 100000, 120000, 160000, 200000];
+// levels:            L1    L2   L3   L4   L5   L6   L7    L8    L9    L10   L11   L12   L13   L14   L15   L16   L17    L18    L19    L20    L21    L22    L23    L24    L25    L26    L27     L28     L29     L30
+// Want to estimate levels for a tournament?
+// Use the formula (time * Lx)
+//      --> 30min * L5 = 150min -->
+//      --> 150/60 = 2.5h -->
+//      --> It takes 2.5 to complete 5 levels at 30 min.
 let levelTimeImported = urlParams.has('levelTime') ? parseInt(urlParams.get('levelTime')) : 20; // Default level time is 20 minutes
 let breakTimeImported = urlParams.has('breakTime') ? parseInt(urlParams.get('breakTime')) : 0; // Default break time is 0 minutes
 let originalTime = levelTimeImported * 60; // 20 minutes in seconds
