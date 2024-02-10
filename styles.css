@@ -3,12 +3,13 @@ body {
     text-align: center;
     margin: 20px;
     background-color: #cfc5b4;
+    position: relative; /* Ensure the container is positioned relative to the body */
 }
 
 #title {
-    font-size: 50px; /* Adjust the font size as needed */
-    font-weight: bold; /* Adjust the font weight as needed */
-    color: #333; /* Adjust the color as needed */
+    font-size: 50px;
+    font-weight: bold;
+    color: #333;
 }
 
 #breakMessage {
@@ -27,7 +28,7 @@ body {
 
 #currentBlinds {
     font-size: 100px;
-    display: inline-flex; /* or display: inline-block; */
+    display: inline-flex;
 }
 
 #currentBlinds span {
@@ -36,13 +37,12 @@ body {
 
 #upcomingLevel {
     font-size: 70px;
-    margin-top: 150px;
-
+    margin-top: 100px;
 }
 
 #upcomingBlinds {
     font-size: 70px;
-    display: inline-flex; /* or display: inline-block; */
+    display: inline-flex;
 }
 
 #upcomingBlinds span {
@@ -54,3 +54,49 @@ body {
     font-size: 16px;
     margin-top: 20px;
 }
+
+/* Button styles */
+#backButton {
+    position: absolute;
+    top: 10px; /* Adjust top position as needed */
+    left: 10px; /* Adjust left position as needed */
+    font-size: 16px;
+
+}
+
+.button-74 {
+    background-color: #fbeee0;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-74:hover {
+    background-color: #fff;
+}
+
+.button-74:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+    .button-74 {
+        min-width: 120px;
+        padding: 0 25px;
+    }
+}
+
+

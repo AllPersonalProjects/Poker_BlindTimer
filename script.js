@@ -103,7 +103,7 @@ function updateBreakTimer() {
         remainingTime--;
 
         // Display break message
-        breakMessageDisplay.textContent = `5 min break time`;
+        breakMessageDisplay.textContent = `break time`;
     }
 }
 function stopTimer() {
@@ -112,3 +112,7 @@ function stopTimer() {
 
 document.getElementById('startButton').addEventListener('click', startTimer);
 document.getElementById('stopButton').addEventListener('click', stopTimer);
+document.getElementById('backButton').addEventListener('click', function() {
+    // Redirect to the front page
+    window.location.href = 'front_page.html';
+});
