@@ -9,5 +9,5 @@ document.getElementById('createButton').addEventListener('click', function() {
     }
 
     // Redirect to the main page with the selected values as query parameters
-    window.location.href = `index.html?levelTime=${levelTime}&breakTime=${breakTime}`;
+    window.location.href = `main.html?levelTime=${levelTime}&breakTime=${breakTime}`;
 });
