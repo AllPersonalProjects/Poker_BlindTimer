@@ -8,6 +8,10 @@ document.getElementById('createButton').addEventListener('click', function() {
         return; // Stop execution if level time is not provided
     }
 
+    if (isNaN(breakTime)) {
+        breakTime = 0;
+    }
+
     // Redirect to the main page with the selected values as query parameters
     window.location.href = `main.html?levelTime=${levelTime}&breakTime=${breakTime}`;
 });
